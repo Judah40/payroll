@@ -42,6 +42,10 @@ dependencies:
   window_manager: ^0.3.9
   sidebarx: ^0.17.1
   google_fonts: ^6.2.1
+  syncfusion_flutter_charts: ^26.1.42
+  table_calendar: ^3.1.2
+  fl_chart: ^0.68.0
+  image_input: ^0.0.5
 
 dev_dependencies:
   flutter_test:

@@ -16,7 +16,7 @@ class _SplashState extends State<Splash> {
   }
 
   _navigationtohome() async {
-    await Future.delayed(const Duration(seconds: 10), () {});
+    await Future.delayed(const Duration(seconds: 3), () {});
     // ignore: use_build_context_synchronously
     Navigator.pushNamed(context, '/home');
   }

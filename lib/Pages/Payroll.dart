@@ -10,6 +10,8 @@ class Payroll extends StatefulWidget {
 class _PayrollState extends State<Payroll> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return   Scaffold(
+      body: Container(child: Text("hey"),),
+    );;
   }
 }

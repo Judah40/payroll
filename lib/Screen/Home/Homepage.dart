@@ -32,10 +32,10 @@ class _MyWidgetState extends State<Homepage> {
     return Scaffold(
       body: Row(children: [
         SizedBox(
-          width: 200,
+          width: 250,
           height: MediaQuery.of(context).size.height,
           child: Container(
-              color: Colors.amber[900], child: side_bar(onButtonPressed: callbackstring)),
+              color: Colors.amber[900], child: side_bar(onButtonPressed: callbackstring,value:_selectedIndex )),
         ),
         Expanded(child: _pages[_selectedIndex])
       ]),

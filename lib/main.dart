@@ -3,6 +3,7 @@ import 'package:payrollapp/Screen/Auth/login.dart';
 import 'package:payrollapp/Screen/Home/Homepage.dart';
 import 'package:payrollapp/Widgets/Splash.dart';
 import 'package:window_manager/window_manager.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -11,7 +12,8 @@ void main() async {
   await windowManager.ensureInitialized();
 
   // Set the minimum window size
-  windowManager.setMinimumSize(const Size(1000, 1000));
+  windowManager.setMinimumSize(const Size(1500, 1000));
+  windowManager.setMaximumSize(const Size(1500, 1000));
   runApp(const MyApp());
 }
 
@@ -26,6 +28,7 @@ class _MyWidgetState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(textTheme: GoogleFonts.interTextTheme()),
       debugShowCheckedModeBanner: false,
       home: const Splash(),
       routes: {
