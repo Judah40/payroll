@@ -12,7 +12,7 @@ class side_bar extends StatelessWidget {
     return Scaffold(
         body: SizedBox.expand(
       child: Container(
-          color: Color.fromARGB(255, 94, 41, 0),
+          color: const Color.fromARGB(255, 94, 41, 0),
           child: Column(
             children: [
               Expanded(
@@ -31,58 +31,62 @@ class side_bar extends StatelessWidget {
                         ]),
                       ),
                     ),
-                      Container(
-                        decoration: BoxDecoration(
-                            color: value == 0 ? Colors.brown[900] : null,
-                            border:const Border(left: BorderSide(color: Colors.brown, width: 5)),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: value == 0 ? Colors.brown[900] : null,
+                        border: value == 0
+                            ? const Border(
+                                left: BorderSide(color: Colors.brown, width: 5))
+                            : null,
+                      ),
+                      child: ListTile(
+                        tileColor: Colors.brown[900],
+                        leading: const Icon(
+                          Icons.dashboard,
+                          color: Colors.white,
+                        ),
+                        title: const Text(
+                          "Dashboard",
+                          style: TextStyle(color: Colors.white, fontFamily: ''),
+                        ),
+                        onTap: () => {onButtonPressed(0)},
+                      ),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: value == 1 ? Colors.brown[900] : null,
+                        border: value == 1
+                            ? const Border(
+                                left: BorderSide(color: Colors.brown, width: 5))
+                            : null,
+                      ),
+                      child: ListTile(
+                          leading: const Icon(Icons.verified_user,
+                              color: Colors.white),
+                          title: const Text(
+                            "Employee",
+                            style: TextStyle(color: Colors.white),
                           ),
-                        child: ListTile(
-                          tileColor: Colors.brown[900],
+                          onTap: () => {onButtonPressed(1)}),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: value == 2 ? Colors.brown[900] : null,
+                        border: value == 2
+                            ? const Border(
+                                left: BorderSide(color: Colors.brown, width: 5))
+                            : null,
+                      ),
+                      child: ListTile(
                           leading: const Icon(
-                            Icons.dashboard,
+                            Icons.money,
                             color: Colors.white,
                           ),
                           title: const Text(
-                            "Dashboard",
-                            style:
-                                TextStyle(color: Colors.white, fontFamily: ''),
+                            "Payroll",
+                            style: TextStyle(color: Colors.white),
                           ),
-                          onTap: () => {onButtonPressed(0)},
-                        ),
-                      ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: value == 1 ? Colors.brown[900] : null,
-                            borderRadius: BorderRadius.circular(6)),
-                        child: ListTile(
-                            leading: const Icon(Icons.verified_user,
-                                color: Colors.white),
-                            title: const Text(
-                              "Employee",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                            onTap: () => {onButtonPressed(1)}),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: value == 2 ? Colors.brown[900] : null,
-                            borderRadius: BorderRadius.circular(6)),
-                        child: ListTile(
-                            leading: const Icon(
-                              Icons.money,
-                              color: Colors.white,
-                            ),
-                            title: const Text(
-                              "Payroll",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                            onTap: () => {onButtonPressed(2)}),
-                      ),
+                          onTap: () => {onButtonPressed(2)}),
                     ),
                   ],
                 ),
