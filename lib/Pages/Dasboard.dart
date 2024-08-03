@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:payrollapp/Widgets/PagesWidgets/Dashboard/Calendar.dart';
 import 'package:payrollapp/Widgets/PagesWidgets/Dashboard/bar_charts.dart';
 import 'package:payrollapp/Widgets/PagesWidgets/Dashboard/key_metrics.dart';
@@ -31,7 +29,7 @@ class _DasboardState extends State<Dasboard> {
 }
 
 Widget buildContent(BuildContext context, BoxConstraints constraints) {
-  return Container(
+  return SizedBox(
       width: constraints.maxWidth,
       height: MediaQuery.of(context).size.height,
       child: SingleChildScrollView(
@@ -74,14 +72,14 @@ Widget buildContent(BuildContext context, BoxConstraints constraints) {
                               .cover, //Make the image cover the entire container
                         ),
                       ),
-                      child: Text("data")),
+                      child: const Text("data")),
                 ),
                 Container(
                   child: Row(
                     children: [
                     const  Padding(
-                        padding: const EdgeInsets.only(right: 8.0),
-                        child: const key_metrics(),
+                        padding: EdgeInsets.only(right: 8.0),
+                        child: key_metrics(),
                       ),
                       Expanded(
                           child: Container(
@@ -98,7 +96,7 @@ Widget buildContent(BuildContext context, BoxConstraints constraints) {
                         ),
                         width: 400,
                         height: 270,
-                        child: BarChartSample(),
+                        child: const BarChartSample(),
                       ))
 
                       // Expanded(child: bar_chart()),
@@ -144,7 +142,7 @@ Widget buildContent(BuildContext context, BoxConstraints constraints) {
                           ],
                         ),
                         height: 380,
-                        child: PieChartSample(),
+                        child: const PieChartSample(),
                       ),
                     ))
                   ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:payrollapp/Widgets/PagesWidgets/Payroll/table.dart';
 
 class Payroll extends StatefulWidget {
   const Payroll({super.key});
@@ -61,12 +62,18 @@ Widget buildContent(BuildContext context, BoxConstraints constraints) {
                 color: Colors.redAccent,
                 borderRadius: BorderRadius.circular(4.0),
               ),
-              child: Image(
+              child: const Image(
                 image: AssetImage("assets/Backgrounds/backgroun.jpg"),
                 fit: BoxFit.cover,
               ),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              child: table(),
+            ),
+          )
         ],
       ),
     ),

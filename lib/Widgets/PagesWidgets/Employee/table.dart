@@ -6,9 +6,9 @@ class table extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DataTable(
-      headingRowColor: MaterialStateColor.resolveWith(
+      headingRowColor: WidgetStateColor.resolveWith(
           (states) => const Color.fromRGBO(255, 111, 0, 1)),
-      dataRowColor: MaterialStateColor.resolveWith((states) => Colors.white),
+      dataRowColor: WidgetStateColor.resolveWith((states) => Colors.white),
       columns: const <DataColumn>[
         DataColumn(
           label: Expanded(

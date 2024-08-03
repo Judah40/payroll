@@ -77,7 +77,7 @@ class _EmployeeState extends State<Employee> {
                   color: Colors.redAccent,
                   borderRadius: BorderRadius.circular(4.0),
                 ),
-                child: Image(
+                child: const Image(
                   image: AssetImage("assets/Backgrounds/backgroun.jpg"),
                   fit: BoxFit.cover,
                 ),
@@ -146,7 +146,6 @@ class _EmployeeState extends State<Employee> {
                       onPressed: () {
                         // Action for Add Employee button
                       },
-                      child: const Text('Add Employee'),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.amber[900],
                         foregroundColor: Colors.white,
@@ -155,6 +154,7 @@ class _EmployeeState extends State<Employee> {
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                       ),
+                      child: const Text('Add Employee'),
                     ),
                   ),
                 ],
@@ -162,12 +162,12 @@ class _EmployeeState extends State<Employee> {
             ),
             // Other content here
             Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               child: Expanded(
-                  child: Container(
+                  child: SizedBox(
                       width: constraints.maxWidth,
                       // color: Colors.red,
-                      child: table())),
+                      child: const table())),
             )
           ],
         ),

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
 class BarChartSample extends StatelessWidget {
+  const BarChartSample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +51,7 @@ class BarChartSample extends StatelessWidget {
                 width: 1,
               ),
             ),
-            gridData: FlGridData(show: false),
+            gridData: const FlGridData(show: false),
             barGroups: [
               BarChartGroupData(
                 x: 0,
@@ -89,4 +91,4 @@ class BarChartSample extends StatelessWidget {
   }
 }
 
-void main() => runApp(MaterialApp(home: BarChartSample()));
+void main() => runApp(const MaterialApp(home: BarChartSample()));

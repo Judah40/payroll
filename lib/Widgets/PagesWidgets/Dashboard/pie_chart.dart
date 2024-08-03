@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
 class PieChartSample extends StatelessWidget {
+  const PieChartSample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +27,7 @@ class PieChartSample extends StatelessWidget {
         value: 40,
         title: '40%',
         radius: 50,
-        titleStyle: TextStyle(
+        titleStyle: const TextStyle(
             fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
       ),
       PieChartSectionData(
@@ -33,7 +35,7 @@ class PieChartSample extends StatelessWidget {
         value: 30,
         title: '30%',
         radius: 50,
-        titleStyle: TextStyle(
+        titleStyle: const TextStyle(
             fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
       ),
       PieChartSectionData(
@@ -41,7 +43,7 @@ class PieChartSample extends StatelessWidget {
         value: 20,
         title: '20%',
         radius: 50,
-        titleStyle: TextStyle(
+        titleStyle: const TextStyle(
             fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
       ),
       PieChartSectionData(
@@ -49,11 +51,11 @@ class PieChartSample extends StatelessWidget {
         value: 10,
         title: '10%',
         radius: 50,
-        titleStyle: TextStyle(
+        titleStyle: const TextStyle(
             fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
       ),
     ];
   }
 }
 
-void main() => runApp(MaterialApp(home: PieChartSample()));
+void main() => runApp(const MaterialApp(home: PieChartSample()));
