@@ -55,7 +55,6 @@ class _Login extends State<Login> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(6)),
               ),
-              
               child: const Text('Login'),
             ),
           )

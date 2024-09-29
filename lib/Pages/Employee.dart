@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:payrollapp/Widgets/PagesWidgets/Employee/table.dart';
 
@@ -145,6 +147,7 @@ class _EmployeeState extends State<Employee> {
                     child: ElevatedButton(
                       onPressed: () {
                         // Action for Add Employee button
+                        _addEmployee(context);
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.amber[900],
@@ -243,4 +246,185 @@ void main() {
   runApp(const MaterialApp(
     home: Employee(),
   ));
+}
+
+Future<void> _addEmployee(BuildContext context) {
+  // void _handleFormSubmit(Map<String, dynamic> formData) {
+  //   // Handle the form data, e.g., send it to a server, print it, etc.
+  //   print('Form Data: $formData');
+  // }
+
+  return showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return const AlertDialog(
+          title: Text('Add Employee'),
+          content: ModalForm(),
+          actions: [],
+        );
+      });
+}
+
+class ModalForm extends StatefulWidget {
+  const ModalForm({super.key});
+
+  @override
+  _ModalFormState createState() => _ModalFormState();
+}
+
+class _ModalFormState extends State<ModalForm> {
+  final _formKey = GlobalKey<FormState>();
+  String? firstName;
+  String? lastName;
+  String? address;
+  String? email;
+  String? phone;
+  String? StartDate;
+  String? EndDate;
+  String? JobTitle;
+  String? NassitNumber;
+  String? ProfilePicture;
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key: _formKey,
+      child: Column(
+        mainAxisSize: MainAxisSize.min, // Keep the modal small
+        children: [
+          TextFormField(
+            decoration: const InputDecoration(labelText: 'First Name'),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter first name';
+              }
+              return null;
+            },
+            onSaved: (value) {
+              firstName = value;
+            },
+          ),
+          TextFormField(
+            decoration: const InputDecoration(labelText: 'Last Name'),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter last name';
+              }
+              return null;
+            },
+            onSaved: (value) {
+              lastName = value;
+            },
+          ),
+          TextFormField(
+            decoration: const InputDecoration(labelText: 'Address'),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter Address';
+              }
+              return null;
+            },
+            onSaved: (value) {
+              address = value;
+            },
+          ),
+          TextFormField(
+            decoration: const InputDecoration(labelText: 'Email'),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter  Email';
+              }
+              return null;
+            },
+            onSaved: (value) {
+              email = value;
+            },
+          ),
+          TextFormField(
+            decoration: const InputDecoration(labelText: 'Job Title'),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter Job Title';
+              }
+              return null;
+            },
+            onSaved: (value) {
+              JobTitle = value;
+            },
+          ),
+          TextFormField(
+            decoration: const InputDecoration(labelText: 'Phone Number'),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter Phone Number';
+              }
+              return null;
+            },
+            onSaved: (value) {
+              phone = value;
+            },
+          ),
+          TextFormField(
+            decoration: const InputDecoration(labelText: 'Start Date'),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter Start Date';
+              }
+              return null;
+            },
+            onSaved: (value) {
+              StartDate = value;
+            },
+          ),
+          TextFormField(
+            decoration: const InputDecoration(labelText: 'Nassit Number'),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter Nassit Number';
+              }
+              return null;
+            },
+            onSaved: (value) {
+              NassitNumber = value;
+            },
+          ),
+          TextFormField(
+            decoration: const InputDecoration(labelText: 'End Date'),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter End Date';
+              }
+              return null;
+            },
+            onSaved: (value) {
+              EndDate = value;
+            },
+          ),
+          TextFormField(
+            decoration: const InputDecoration(labelText: 'Profile Picture'),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please Select Picture';
+              }
+              return null;
+            },
+            onSaved: (value) {
+              NassitNumber = value;
+            },
+          ),
+          const SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: () {
+              if (_formKey.currentState!.validate()) {
+                _formKey.currentState!.save();
+                // print('First Name: $firstName, Last Name: $lastName');
+                Navigator.of(context)
+                    .pop(); // Close the modal after form submission
+              }
+            },
+            child: const Text('Submit'),
+          ),
+        ],
+      ),
+    );
+  }
 }

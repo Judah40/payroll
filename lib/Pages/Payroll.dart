@@ -9,6 +9,15 @@ class Payroll extends StatefulWidget {
 }
 
 class _PayrollState extends State<Payroll> {
+  int isDateVisible = 0;
+
+  void counter() {
+    setState(() {
+      isDateVisible++;
+    });
+  }
+
+  @override
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,7 +80,7 @@ Widget buildContent(BuildContext context, BoxConstraints constraints) {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
-              child: table(),
+              child: const table(),
             ),
           )
         ],
